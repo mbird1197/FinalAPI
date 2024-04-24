@@ -16,11 +16,6 @@ const State = new Schema({
     funfacts: {
 
         type: [String],
-       
-
-
-
-
 
     }
 
