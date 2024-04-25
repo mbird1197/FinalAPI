@@ -9,7 +9,7 @@ const connectDB = require('./config/dbConn');
 
 app.get('/', (req, res)=> {
 
-res.sendFile('./views/index.html', {root: __dirname});
+res.sendFile(path.join(__dirname, 'views', 'index.html'));
 
 
 //
