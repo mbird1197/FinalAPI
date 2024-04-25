@@ -9,7 +9,7 @@ const connectDB = require('./config/dbConn');
 
 app.get('/', (req, res)=> {
 
-res.sendFile('./model/statesData.json', {root: __dirname});
+res.sendFile('./views/index.html', {root: __dirname});
 
 
 //
