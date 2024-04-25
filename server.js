@@ -7,7 +7,14 @@ const PORT = process.env.PORT || 3500;
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 
+app.get('/', (req, res)=> {
 
+res.sendFile('./model/statesData.json', {root: __dirname});
+
+
+//
+
+})
 
 connectDB();
 
@@ -25,10 +32,11 @@ mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
     
 
-app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
+
 
 
 })
 
+app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
 
 //await mongoose.connect(process.env.DATABASE_URI);  goes into the conenctDb function
