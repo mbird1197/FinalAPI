@@ -19,11 +19,16 @@ app.get('/', (req, res)=> {
 res.sendFile(path.join(__dirname, 'views', 'index.html'));
 
 
-//
+})
+
+app.get('/states', (req, res) => {
+
+res.sendFile(path.join(__dirname, 'model', 'statesData.json'));
+
 
 })
 
-app.get('/*', (req, res) => {
+app.all('*', (req, res) => {
 
     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 })
