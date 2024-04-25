@@ -14,16 +14,11 @@ app.use(express.json());
 
 //
 
-app.get('/', (req, res)=> {
 
-res.sendFile(path.join(__dirname, 'views', 'index.html'));
-
-
-})
 
 app.get('/states', (req, res) => {
 
-res.sendFile(path.join(__dirname, 'model', 'statesData.json').json());
+res.sendFile(path.join(__dirname, 'model', 'statesData.json'));
 
 
 })
