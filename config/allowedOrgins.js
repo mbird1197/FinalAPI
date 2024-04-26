@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    'no-cors',
+    'https://dazzling-snickerdoodle-777101.netlify.app/',
 ];
 
 module.exports = allowedOrigins;
