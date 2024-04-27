@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const verifyStates = require('./controller/statesController');
 const statesData = require('./model/statesData.json');
 const cors = require('cors');
 const PORT = process.env.PORT || 3500;
@@ -23,8 +24,14 @@ res.json(statesData);
 
 })
 
+app.get('/states/:state', verifyStates, (req, res) => {
+    
+    const state = req.code;
+    res.json({ state });
+});
 
 
+//
 
 
 

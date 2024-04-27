@@ -11,8 +11,21 @@ app.get('/states/:state', (req, res, next) =>{
 
     const upperCaseCode = stateCode.toUpperCase();
 
+    const statesCodes = statesData.map(state => state.stateCode);
+   
+    function isStateAbbreviationValid(stateCode) {
+       
+        const foundState = statesCodes.find(state => state === stateCode);
+        
+       return foundState !== undefined;
+        
+      }
 
-    
+
+      if(!isStateAbbreviationValid(upperCaseCode)){
+        return res.status(404).send({'error' : 'Not a valid state.'});
+      }
+    req.code = upperCaseCode;
 
     next();
 })
