@@ -7,7 +7,7 @@ const cors = require('cors');
 const { applyDefaults } = require('./model/States');
 const PORT = process.env.PORT || 3500;
 app.use(cors());
-app.use(verifyStateCodes);
+
 app.use(express.urlencoded({ extended: false}));
 
 app.use(express.json());
@@ -25,7 +25,7 @@ res.json(statesData);
 
 })
 
-app.get('/states/:state',   (req, res) => {
+app.get('/states/:state',  verifyStateCodes,  (req, res) => {
     
     const state = req.code;
     res.json({ state });
