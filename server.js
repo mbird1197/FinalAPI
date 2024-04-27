@@ -28,7 +28,7 @@ res.json(statesData);
 app.get('/states/:state',  verifyStateCodes,  (req, res) => {
     
     const state = req.code;
-    res.json({ state });
+    res.json( state );
 });
 
 
