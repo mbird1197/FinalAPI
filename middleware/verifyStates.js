@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 
-const verifyStates = (req, res, next) => {
+const verifyStateCodes = (req, res, next) => {
 
 app.get('/states/:state', (req, res, next) =>{
 
@@ -33,3 +33,5 @@ app.get('/states/:state', (req, res, next) =>{
 
 
 }
+
+module.exports = verifyStateCodes;
